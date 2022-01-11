@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- memento mori -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>unus baccus</title>  
+</head>
+<body>
+    <video class="video" src="unus annus.mp4"muted loop autoplay></video>
+    <audio autoplay> 
+        <source src="music/Unus Annus Theme -- Orchestral Cover.mp3" type="audio/mpeg"> 
+    </audio>
+    <table class="countdownContainer">
+        <tr class="info">
+            <td colspan="4" >Unus Baccus</td>
+        </tr>
+        <tr class="numbers">
+            <td id="days">59</td>
+            <td id="hours">59</td>
+            <td id="minutes">59</td>
+            <td id="seconds">59</td>
+        </tr>
+        <tr class="timestamp">
+            <td>Days</td>
+            <td>Hours</td>
+            <td>Minutes</td>
+            <td>Seconds</td>
+        </tr>
+    </table>
+    <script>
+        function countdown(){
+            let now = new Date();
+            let BaccusDatus = new Date(now.getFullYear(), 5, 20);
+            let currentTime = now.getTime();
+            let BaccusTime = BaccusDatus.getTime();
+            let remainingTime = BaccusDatus - currentTime;
+            let seconds = Math.floor(remainingTime/1000);
+            let minutes = Math.floor(seconds/60);
+            let hours = Math.floor(minutes/60);
+            let days = Math.floor(hours/24);
+
+            hours %= 24
+            minutes %= 60
+            seconds %= 60
+
+            hours = (hours< 10) ? "0"+hours : hours;
+            minutes = (minutes< 10) ? "0"+minutes : minutes;
+            seconds = (seconds< 10) ? "0"+seconds : seconds;
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("seconds").textContent = seconds;
+
+            setTimeout(countdown, 1000);
+        }
+        countdown()
+        // what are you looking for?
+    </script>
+</body>
+</html>
