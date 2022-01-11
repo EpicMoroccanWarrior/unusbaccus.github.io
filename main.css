@@ -1,6 +1,10 @@
 @font-face{
-    src: url(fonts/Afterglow-Regular.ttf);
+    src: url(fonts/Britania_Ligatura.ttf);
     font-family: Afterglow;
+}
+@font-face {
+    font-family:RealAfterglow ;
+    src: url(fonts/Afterglow-Regular.ttf);
 }
 * {
     box-sizing: border-box;
@@ -24,17 +28,19 @@
 }
 .info {
     color: white;
-    font-size: 100px;
-    font-family: Afterglow;
+    font-size: 90px;
+    font-family: RealAfterglow;
 }
 .numbers{
     color: white;
-    font-size: 80px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 70px;
+    font-family: Afterglow;
 }
 .timestamp{
     color: white;
     font-family: sans-serif;
+    font-family: Afterglow;
+
 }
 .video {
     position:absolute;
